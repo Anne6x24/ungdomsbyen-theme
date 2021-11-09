@@ -17,7 +17,7 @@ Version: 1.0.0
 
 /* baggrundsfarve */
 body {
-    background-color: white;
+    background-color: #f2EFEB;
     font-family: anton;
 }
 
@@ -135,6 +135,10 @@ body.search-active #primary-search-wrapper .search-toggle:focus, .absolute-heade
 }
 
 .header-media .entry-title a {
+    color:black;
+}
+
+h1, .page-title, h3 {
     color:black;
 }
 
