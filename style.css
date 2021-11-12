@@ -89,6 +89,7 @@ button[type="submit"]:hover {
     background-color: none;
 }
 
+
 /* HOVER PÅ HELE SITET*/
 
 a:hover, a:focus, .entry-title a:hover, .entry-title a:focus, .post-wrapper .entry-meta .cat-links a:hover, 
@@ -141,5 +142,11 @@ body.search-active #primary-search-wrapper .search-toggle:focus, .absolute-heade
 h1, .page-title, h3 {
     color:black;
 }
+
+h2 {
+    color: white;
+}
+
+
 
 
