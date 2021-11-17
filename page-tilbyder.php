@@ -9,11 +9,16 @@ body:not(.home) .site-content {
     background-color:#C4D2C7;
 }
 
-nav {
+#filtrering {
     text-align: center;
+    padding-top: 5rem;
 }
 
-button {
+.filter_valgt {
+    display: none;
+}
+
+.filter {
     background-image: none;
     /* background-color: #019C51; */
     background-color: #FFFFFF;
@@ -25,7 +30,34 @@ button {
     padding: 5px 10px;
 }
 
-button:hover {
+.filter_valgt:hover {
+    background-image: none;
+    background-color: #FAD8E8;
+    color: black;
+    
+}
+
+#ekstra_p {
+    grid-row: 1/1;
+}
+
+h3 {
+    grid-column: 2/2;
+}
+
+.filter:hover {
+    background-image: none;
+    background-color: #FAD8E8;
+    color: black;
+    
+}
+.filter_valgt:focus {
+    background-image: none;
+    background-color: #FAD8E8;
+    
+}
+
+.filter:focus, .her1:focus, .her2:focus {
     background-image: none;
     background-color: #FAD8E8;
     
@@ -35,15 +67,19 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    padding-top: 6rem;
 }
 
 
+.kasse_1 {
+    gap: 10px;
+}
 
 #kursus_oversigt {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin-top: 4rem;
+    margin-top: 5rem;
     margin-left: 5rem;
     margin-right: 5rem;
 }
@@ -57,6 +93,14 @@ button:hover {
     margin-top: 20px;
 }
 
+#ekstra_tekst {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-bottom: 3rem;
+}
+
+
+
 #toppen {
     text-align: center;
     
@@ -64,17 +108,34 @@ button:hover {
 
 
 
-#toppen p {
+#toppen .vi_tilbyder {
     font-size: 20px;
     margin-left: 15rem;
     margin-right: 15rem;
 }
 
 
+#ekstra_tekst p {
+    font-size: 20px;
+    padding-left: 7.8rem;
+    padding-right: 10px;
+    text-align: left;
+}
+
+#ekstra_tekst h3 {
+    padding-left: 7.8rem;
+    padding-right: 10px;
+    text-align: left;
+}
+
+#ekstra_tekst a {
+    padding-left: -2rem;
+    
+}
 
 p {
     font-family: Galvji;
-    font-size: 10px; 
+    font-size: 14px; 
 }
 
 h2, h4 {
@@ -88,25 +149,56 @@ h3 {
 h4 {
     font-size: 15px;
 }
+
+@media(max-width: 500px) {
+    #toppen .vi_tilbyder {
+        margin: 0;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    #kursus_oversigt {
+    display: block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+    #kursus_oversight {
+        
+        background-color: #F6F2E4;
+        padding: 34px;
+        margin-top: 20px;
+    }
+
+    h3:first-child{
+        margin-top: 10vw;
+    }
+}
+
+
+
 </style>
 
 
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
     <section id="toppen">
-    <h1>VI TILBYDER</h1>
-    <p>Vi tilbyder kurser, som henvender sig til elever såvel som
-undervisere, skoler og kommuner. Vores Kurser omhandler
-alt fra konflikhåndtering, FN’s verdensmål og økonomi.
-Nedenfor ser du en oversigt over de kurser vi tilbyder.</p>
+    <h1 class="vi_tilbyder">VI TILBYDER</h1>
+    <p class="vi_tilbyder">Vi tilbyder kurser, som henvender sig til elever såvel som
+        undervisere, skoler og kommuner. Vores Kurser omhandler
+        alt fra konflikhåndtering, FN’s verdensmål og økonomi.
+        Nedenfor ser du en oversigt over de kurser vi tilbyder.</p>
     <div class="brobygning">
-    <h3>BROBYGNING OG ERHVERVSUDDANNELSER</h3>
-    <p>Udover diverse kurser, tilbyder vi også brobygning i forskellige former. Læs 
-        mere om dette via nedenstående links.
-    </p>
-    <a href="https://ungdomsbyen.dk/wp-content/uploads/2020/03/ungby-erhvervsfolder-20-21.pdf">Katalog vedrørende brobygningsforløb</a>
+        <div id="ekstra_tekst">
+            <h3>BROBYGNING OG ERHVERVSUDDANNELSER</h3>
+                <p>Udover diverse kurser, tilbyder vi også brobygning i forskellige former. Læs 
+                    mere om dette via nedenstående links.
+                </p>
+            <a href="https://ungdomsbyen.dk/wp-content/uploads/2020/03/ungby-erhvervsfolder-20-21.pdf">Katalog vedrørende brobygningsforløb</a>
+    
+        </div>
     </div>
-    </section> 
+</section> 
     <nav id="filtrering"><button class="filter_valgt" data-kursus="alle">Alle</button></nav>
   
    
@@ -128,9 +220,9 @@ Nedenfor ser du en oversigt over de kurser vi tilbyder.</p>
     <h4 class="kategori"></h2>
         <p class="beskrivelse"></p>
         <p class="pris"></p>
-        <p class="henvendelse"></p>
+        <p class="henvendelse">Henvendelse: </p>
         <button class="her1">LÆS MERE</button>
-        <button clas="her2">BOOK HER</button>
+        <button class="her2">BOOK HER</button>
         
     </article>
 
@@ -161,9 +253,9 @@ Nedenfor ser du en oversigt over de kurser vi tilbyder.</p>
             //hent alle custom posttypes retter
             const url = siteUrl +"wp-json/wp/v2/kursus?per_page=100";
             //hent basis categories
-            const catUrl = "http://annemunksgaard.dk/kea/02sem/tema09/ungdomsbyen_wp/wp-json/wp/v2/categories";
+            const catUrl = "https://annemunksgaard.dk/kea/02sem/tema09/ungdomsbyen_wp/wp-json/wp/v2/categories";
              //hent custom category: hovedkategori
-            const contUrl = "http://annemunksgaard.dk/kea/02sem/tema09/ungdomsbyen_wp/wp-json/wp/v2/hovedkategori";
+            const contUrl = "https://annemunksgaard.dk/kea/02sem/tema09/ungdomsbyen_wp/wp-json/wp/v2/hovedkategori";
             let response = await fetch(url);
             let catResponse = await fetch(catUrl);
             let contResponse = await fetch(contUrl);
@@ -206,12 +298,15 @@ Nedenfor ser du en oversigt over de kurser vi tilbyder.</p>
                     klon.querySelector(".navn").innerHTML = kursus.navn;
                     klon.querySelector(".kategori").innerHTML = kursus.kategori;
             
-            klon.querySelector(".beskrivelse").innerHTML = kursus.beskrivelse;
+            klon.querySelector(".beskrivelse").innerHTML = kursus.kort_beskrivelse;
             klon.querySelector(".pris").innerHTML = kursus.pris;
-            klon.querySelector(".henvendelse").innerHTML = kursus.henvendelse;
+            klon.querySelector(".henvendelse").innerHTML += kursus.henvendelse;
             klon.querySelector(".her1").addEventListener("click", () => {
                 location.href = kursus.link;
-                    })
+            })
+            klon.querySelector(".her2").addEventListener("click", () => {
+                location.href = "https://annemunksgaard.dk/kea/02sem/tema09/ungdomsbyen_wp/booking/";
+             })
                     liste.appendChild(klon);
                 }
             })
@@ -238,17 +333,7 @@ Nedenfor ser du en oversigt over de kurser vi tilbyder.</p>
             this.classList.add("valgt");
             visKurser();
         }
-        //  function filtreringIndhold() {
-        //     filterIndhold = this.dataset.cont;
-           
-        //      //fjern .valgt fra alle
-        //     document.querySelectorAll("#indhold_filtrering .filter").forEach(elm => {
-        //         elm.classList.remove("valgt");
-        //     });
-        //     //tilføj .valgt til den valgte
-        //     this.classList.add("valgt");
-        //     visKurser();
-        // }
+
     </script>
 
 	</section><!-- #primary -->
