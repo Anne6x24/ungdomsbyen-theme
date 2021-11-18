@@ -5,9 +5,6 @@ get_header();
 ?>
 
 <style>
-    p, h3{
-        font-family: Galvji;
-    }
     h4, p, h2 {
         color: black;
     }
@@ -18,9 +15,8 @@ get_header();
 
     p{
         font-size: 15px;
+        font-family: 'Work';
     }
-
- 
 
     .book {
         color: black;
@@ -89,7 +85,7 @@ get_header();
     /* padding: 4vw; */
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(7, 1fr);
+    /* grid-template-rows: repeat(7, 1fr); */
     
 }
 

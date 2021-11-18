@@ -9,6 +9,11 @@ Version: 1.0.0
     src: url('Anton/Anton-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'Work';
+    src: url('Work_Sans/WorkSans-VariableFont_wght.ttf');
+}
+
 * {
     color: black;
 }
@@ -23,6 +28,10 @@ a, h1, h2, h3, h4, h5, h6 {
 
 header a {
     font-family: 'Anton';
+}
+
+p {
+    font-family: 'Work';
 }
 
 
@@ -202,6 +211,12 @@ a:hover {
 .site-title a:hover {
     color: #009E50;
    } 
+
+h1 {
+    font-size: 2.625rem;
+}
+
+
 
 
 

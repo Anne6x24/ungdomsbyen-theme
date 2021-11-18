@@ -11,7 +11,7 @@ body:not(.home) .site-content {
 
 #filtrering {
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 2rem;
 }
 
 .filter_valgt {
@@ -67,7 +67,8 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    padding-top: 6rem;
+    background-color: #FCF4F8;
+    padding-top: 2vw;
 }
 
 
@@ -97,12 +98,13 @@ h3 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     padding-bottom: 3rem;
+    padding-top: 5vw;
 }
 
 
 
 #toppen {
-    text-align: center;
+    text-align: left;
     
 }
 
@@ -110,7 +112,7 @@ h3 {
 
 #toppen .vi_tilbyder {
     font-size: 20px;
-    margin-left: 15rem;
+    margin-left: 8rem;
     margin-right: 15rem;
 }
 
@@ -129,13 +131,27 @@ h3 {
 }
 
 #ekstra_tekst a {
-    padding-left: -2rem;
-    
+    margin-left: 7.5rem;
+}
+
+.vi_tilbyder p {
+    padding-bottom: 2vw;
+}
+
+.lys {
+    grid-template-columns: 2/3;
+    padding-top: 0;
+    padding-left: 10vw;
+    padding-right: 14vw;
 }
 
 p {
-    font-family: Galvji;
+    font-family: 'Work';
     font-size: 14px; 
+}
+
+#toppen .vi_tilbyder h1{
+    font-size: 2.625rem;
 }
 
 h2, h4 {
@@ -150,17 +166,37 @@ h4 {
     font-size: 15px;
 }
 
+.kurser_o{
+        text-align: center;
+    }
+
+.katalog {
+    color: grey;
+}
+
+.katalog:hover {
+    color: #019d51;
+}
+
+
+
 @media(max-width: 500px) {
-    #toppen .vi_tilbyder {
+
+    #toppen .vi_tilbyder p {
         margin: 0;
-        padding-left: 5vw;
-        padding-right: 5vw;
+        padding-bottom: 8vw;
+        
     }
 
     #kursus_oversigt {
     display: block;
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+    #filtrering {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
 }
 
     #kursus_oversight {
@@ -173,6 +209,59 @@ h4 {
     h3:first-child{
         margin-top: 10vw;
     }
+
+    h4 {
+        margin-top: 1em; 
+    }
+
+    #headline {
+        margin-left: 9vw;
+    }
+
+    .brobygning {
+        display: block;
+    }
+
+    #toppen p, #ekstra_tekst p {
+        text-align: left;
+        padding-left: 6vw;
+    }
+   
+
+    #ekstra_tekst h3 {
+        text-align: center;
+        padding: 0;
+    }
+
+   
+}
+
+@media(max-width: 1000px) {
+    
+    #kursus_oversigt {
+        margin: 2vw;
+    }
+
+    #toppen .vi_tilbyder {
+    font-size: 20px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    padding-bottom: 1em;
+}
+
+    #ekstra_tekst h3 {
+        padding-left: 1rem;
+    }
+
+    #ekstra_tekst p {
+        padding-left: 2rem;
+    }
+
+    .lys {
+    padding-top: 0;
+    padding-left: 0vw;
+    padding-right: 5vw;
+}
 }
 
 
@@ -183,7 +272,7 @@ h4 {
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
     <section id="toppen">
-    <h1 class="vi_tilbyder">VI TILBYDER</h1>
+    <h1 id="headline" class="vi_tilbyder">KURSER OG WORKSHOPS</h1>
     <p class="vi_tilbyder">Vi tilbyder kurser, som henvender sig til elever såvel som
         undervisere, skoler og kommuner. Vores Kurser omhandler
         alt fra konflikhåndtering, FN’s verdensmål og økonomi.
@@ -194,11 +283,15 @@ h4 {
                 <p>Udover diverse kurser, tilbyder vi også brobygning i forskellige former. Læs 
                     mere om dette via nedenstående links.
                 </p>
-            <a href="https://ungdomsbyen.dk/wp-content/uploads/2020/03/ungby-erhvervsfolder-20-21.pdf">Katalog vedrørende brobygningsforløb</a>
+                <a class="katalog" href="https://ungdomsbyen.dk/wp-content/uploads/2020/03/ungby-erhvervsfolder-20-21.pdf">Katalog vedrørende brobygningsforløb</a>
     
         </div>
+        <div class="lys">
+                <img src="http://annemunksgaard.dk/kea/02sem/tema09/ungdomsbyen_wp/wp-content/uploads/2021/11/Artboard-30-4.png" alt="">
+                </div>
     </div>
 </section> 
+    <h3 class="kurser_o">KURSER</h3>
     <nav id="filtrering"><button class="filter_valgt" data-kursus="alle">Alle</button></nav>
   
    
